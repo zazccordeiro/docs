@@ -1,3 +1,5 @@
+![ZAZ Conecta](https://www.acate.com.br/wp-content/uploads/2021/12/zaz-conecta-anuncio-1200x600px-2.png)
+
 # Guia de schemas 
 
 Esta documentação tem como objetivo ser um facilitador e propor autonomia para o melhor aproveitamento do cubo de dados.
@@ -13,8 +15,8 @@ Esta documentação tem como objetivo ser um facilitador e propor autonomia para
     * [Período](#Período)
   * [Dimensões](#Dimensões)
     * [Dimensão cliente](#Dimensãocliente)
-
-
+    * [Dimensão Plataforma](#DimensãoPlataforma)
+    * [Dimensão Estabelecimento](#DimensãoEstabelecimento)
 </details>
 
 ## Informações de medidas
@@ -91,7 +93,7 @@ Detalhes de valores de cobrança do cliente.
 <tr>
 <td valign="center"><strong>valorComissaoCobrada</strong></td>
 <td valign="center"><a href="#Double">Double</a></td>
-<td valign="center"> Valor da comissão cobrada quando o modelo de negócio é ON_DEMAND, HYBRID ou HYBRID_REGION.
+<td valign="center"> Valor da comissão cobrada quando o modelo de negócio é <strong>ON_DEMAND</strong>, <strong>HYBRID</strong> ou <strong>HYBRID_REGION</strong>.
 
 </td>
 </tr>
@@ -160,7 +162,7 @@ Informações referente a data das ocorrencias ligadas a pedidos e pagamentos.
 <tr>
 <td valign="center"><strong>dataCancelamento</strong></td>
 <td valign="center"><a href="Datetime">Datetime</a></td>
-<td valign="center"> Data do cancelamento no formato YYYY-MM-DD
+<td valign="center"> Data do cancelamento no formato _YYYY-MM-DD_
 
 </td>
 </tr>
@@ -205,7 +207,7 @@ Nesta dimensão é possível fazer a leitura de informações para endereçament
 </tr>
 <tr>
 <td valign="center"><strong>clienteId</strong></td>
-<td valign="center"><a href="#uuid">uuid</a></td>
+<td valign="center"><a href="#String">String</a></td>
 <td valign="center"> Código de identificação único do cliente.
 
 </td>
@@ -213,7 +215,7 @@ Nesta dimensão é possível fazer a leitura de informações para endereçament
 <tr>
 <td valign="center"><strong>numeroDocumentoCliente</strong></td>
 <td valign="center"><a href="#String">String</a></td>
-<td valign="center"> Número do documento do cliente (cpf) que deve ser utilizado somente para emissão de documento fiscal quando o cliente solicitar,
+<td valign="center"> Número do documento do cliente (CPF) que deve ser utilizado somente para emissão de documento fiscal quando o cliente solicitar,
 pois o campo é opcional.
 
 </td>
@@ -274,8 +276,8 @@ Informação de qual plataforma utilizada.
 <td valign="center"><a href="#String">String</a></td>
 <td> 
 <p> Código que se refere a plataforma de delivery.</p>
-<p> 0 = NULL  </p>
-<p> 1 = Ifood </p>
+<p> <strong>0</strong> = NULL  </p>
+<p> <strong>1</strong> = Ifood </p>
 </td>
 </tr>
 </tbody>
@@ -283,7 +285,7 @@ Informação de qual plataforma utilizada.
 
 ## Dimensão Estabelecimento
 
-Esta dimensão contém informações refere .
+Esta dimensão contém informações refere.
 
 <table>
 <tbody>
@@ -293,23 +295,58 @@ Esta dimensão contém informações refere .
 <th valign="center">Descrição</th>
 </tr>
 <tr>
-<td valign="center"><strong>merchantId</strong></td>
+<td valign="center"><strong>clienteId</strong></td>
 <td valign="center"><a href="#String">String</a></td>
-<td> Código que se refere a plataforma de delivery.
+<td> Código de identificação único do cliente. 
 
 </td>
 </tr>
 <tr>
-<td valign="center"><strong>numeroDocumentoCliente</strong></td>
+<td valign="center"><strong>codigoEstabelecimento</strong></td>
 <td valign="center"><a href="#String">String</a></td>
-<td valign="center"> Número do documento do cliente (cpf) que deve ser utilizado somente para emissão de documento fiscal quando o cliente solicitar,
-pois o campo é opcional.
+<td valign="center"> Este campo se refere ao código do estabelecimento na plataforma.
 
+</td>
+</tr>
+<tr>
+<td valign="center"><strong>razaoSocialEstabelecimento</strong></td>
+<td valign="center"><a href="#String">String</a></td>
+<td valign="center"> Este campo informa a razão social do estabelecimento.
+
+</td>
+</tr>
+<tr>
+<td valign="center"><strong>nomeEstabelecimento</strong></td>
+<td valign="center"><a href="#String">String</a></td>
+<td valign="center"> Este campo informa a razão social do estabelecimento.
 
 </td>
 </tr>
 </tbody>
 </table>
+
+## Dimensão Estabelecimento
+
+Esta dimensão contém informações refere.
+
+<table>
+<tbody>
+<tr>
+<th valign="center">Campo</th>
+<th valign="center">Tipo</th>
+<th valign="center">Descrição</th>
+</tr>
+<tr>
+<td valign="center"><strong>clienteId</strong></td>
+<td valign="center"><a href="#String">String</a></td>
+<td> Código de identificação único do cliente. 
+
+</td>
+</tr>
+<tr>
+<td valign="center"><strong>codigoEstabelecimento</strong></td>
+<td valign="center"><a href="#String">String</a></td>
+<td valign="center"> Este campo se refere ao código do estabelecimento na plataforma.
 
 
 <!-- END graphql-markdown -->
