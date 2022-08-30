@@ -6,7 +6,8 @@
 </div>
 
 ![ZAZ Conecta](img/logoZaz.png)
-###Extrato adquirentes
+
+### Extrato adquirentes
 
   <summary><strong>Sumário</strong></summary>
 
